@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">LifeStyle</string>
+    <array name="difficulty_levels">
+        <item>Fácil</item>
+        <item>Intermedio</item>
+        <item>Avanzado</item>
+        <item>Muy avanzado</item>
+        <item>Experto</item>
+    </array>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="receta">Añade una receta…</string>
+    <string name="descriptionImage">Imagen receta</string>
+    <string name="nombre">Nombre</string>
+    <string name="nombre_receta">nombre de la receta…</string>
+    <string name="duracion">Duración</string>
+    <string name="duracion_minutos">duración (minutos)…</string>
+    <string name="dificultad">Dificultad</string>
+    <string name="seleccionar_dificultad">Seleccionar dificultad</string>
+    <string name="calorias_titulo">Calorias</string>
+    <string name="ingrediente_titulo">Ingredientes</string>
+    <string name="calorias">calorias</string>
+    <string name="ingrediente_agregar">Agregar ingredientes...</string>
+    <string name="descipcion_titulo">Descripción</string>
+    <string name="buttom">Seleccionar Imagen</string>
+    <string name="guardar">Guardar</string>
+    <string name="descripcion">descripción de la receta</string>
+    <string name="prefs_file">com.example.lifestyle.PREFERENCE_FILE_KEY</string>
+    <string name="default_web_client_id">758339817071-o2a30n5ltsig15qh913n9bj5ai9n9rh2.apps.googleusercontent.com</string>
+</resources>

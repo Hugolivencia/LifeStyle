@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ToolbarTitleStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18sp</item>
+        <item name="colorPrimary">@color/white</item>
+    </style>
+    <style name="cicular">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="SpinnerTextStyle">
+        <item name="android:textSize">10sp</item> <!-- Tamaño del texto -->
+    </style>
+</resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/recipesFragment"
+        android:icon="@drawable/ic_home"
+        android:title="Recipes"
+        />
+    <item
+        android:id="@+id/Favorite"
+        android:icon="@drawable/ic_lupa"
+        android:title="Favorite"
+
+        />
+    <item
+        android:id="@+id/userActivity"
+        android:icon="@drawable/ic_user"
+        android:title="User"
+
+        />
+
+    <item
+        android:id="@+id/createRecipeFragment"
+        android:icon="@drawable/ic_leaf"
+        android:title="Nuevo"
+
+        />
+</menu>

@@ -1,0 +1,159 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/constraintUserMain"
+    android:background="@color/color_fondo">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="top"
+        android:orientation="vertical"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/constraintUser">
+
+        <ImageButton
+            android:id="@+id/arrowBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_arrow_left"
+            android:background="@android:color/transparent"
+            android:backgroundTint="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/txtNomUsuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Hugo Olivencia Chiner"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+
+        <ImageButton
+            android:id="@+id/btnConfiguration"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="16dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="Guardar la receta"
+            android:src="@drawable/configuration" />
+
+        <ImageButton
+            android:id="@+id/BtnMoreRecipes"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="16dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="Guardar la receta"
+            android:src="@drawable/ic_mas" />
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar2"
+        tools:layout_editor_absoluteX="0dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/fotoPerfilUser"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@color/black"
+            app:layout_constraintEnd_toStartOf="@+id/numRecetas"
+            app:layout_constraintStart_toStartOf="parent"
+            app:shapeAppearanceOverlay="@style/cicular"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/numRecetas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Recetas guardadas"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/recetas"
+            app:layout_constraintEnd_toStartOf="@+id/numPost"
+            app:layout_constraintStart_toEndOf="@id/fotoPerfilUser"
+            app:layout_constraintTop_toTopOf="@+id/fotoPerfilUser" />
+
+        <TextView
+            android:id="@+id/numPost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Post"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/post"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/numRecetas"
+            app:layout_constraintTop_toTopOf="@+id/fotoPerfilUser" />
+
+
+        <TextView
+            android:id="@+id/recetas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="45"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/fotoPerfilUser"
+            app:layout_constraintEnd_toStartOf="@+id/post"
+            app:layout_constraintStart_toEndOf="@+id/fotoPerfilUser"
+            app:layout_constraintTop_toBottomOf="@+id/numRecetas" />
+
+        <TextView
+            android:id="@+id/post"
+            android:layout_width="6dp"
+            android:layout_height="14dp"
+            android:text="1"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/fotoPerfilUser"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/recetas"
+            app:layout_constraintTop_toBottomOf="@+id/numPost" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/frameContainerUser"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/green"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bottomNavigationViewUser"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/my_nav_user" >
+    </androidx.fragment.app.FragmentContainerView>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationViewUser"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        android:elevation="0dp"
+        app:itemIconTint="@color/bottom_nav_icon_selector"
+        app:labelVisibilityMode="unlabeled"
+        app:menu="@menu/bottom_nav_menu_user"
+        app:layout_constraintTop_toBottomOf="@id/constraintUser"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
