@@ -25,7 +25,7 @@ open class ActivityMain2 : AppCompatActivity() {
     private lateinit var firebaseStorage: FirebaseStorage
     private var imageUri: Uri? = null
     private var idFireStore: String? = null
-
+    var downloadUrl : String? ? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMain2Binding.inflate(layoutInflater)
@@ -99,7 +99,7 @@ open class ActivityMain2 : AppCompatActivity() {
             binding.editTextCalories.text.toString(),
             ingredientes,
             binding.editTextDescription.text.toString(),
-            imageUri?.toString() ?: "",
+            downloadUrl,
             pasosPreparacion
         )
 
@@ -165,11 +165,11 @@ open class ActivityMain2 : AppCompatActivity() {
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null) {
             imageUri = data.data
             binding.imageViewRecipe.setImageURI(imageUri)
-            subirImageAlStorege(imageUri)
+            subirImageAlStorage(imageUri)
         }
     }
 
-    private fun subirImageAlStorege(imageUri: Uri?) {
+    private fun subirImageAlStorage(imageUri: Uri?) {
         if (imageUri != null) {
             // Crea una referencia en Firebase Storage
             val storageReference = firebaseStorage.reference.child("img/${System.currentTimeMillis()}.jpg")
@@ -179,9 +179,10 @@ open class ActivityMain2 : AppCompatActivity() {
                 .addOnSuccessListener { taskSnapshot ->
                     // Obtén la URL de descarga pública del archivo subido
                     storageReference.downloadUrl.addOnSuccessListener { uri ->
-                        val downloadUrl = uri.toString()
+                        downloadUrl = uri.toString()
+                        Log.d("Pruebas843", "downloadUrl: ${downloadUrl}")
                         // Guarda la URL en Realtime Database o Firestore
-                        guardarImagen(downloadUrl)
+                        guardarImagen(downloadUrl!!)
                     }
                 }
                 .addOnFailureListener { e ->
@@ -195,7 +196,7 @@ open class ActivityMain2 : AppCompatActivity() {
             "url" to downloadUrl,
             "timestamp" to System.currentTimeMillis()
         )
-        db.collection("images").add(imageInfo)
+        db.collection("img").add(imageInfo)
             .addOnSuccessListener {
                 Toast.makeText(this, "URL de la imagen guardada en la base de datos", Toast.LENGTH_SHORT).show()
             }
