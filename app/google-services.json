@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "758339817071",
+    "firebase_url": "https://livestyle-e4ab5-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "livestyle-e4ab5",
+    "storage_bucket": "livestyle-e4ab5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:758339817071:android:963094523448949cbb079a",
+        "android_client_info": {
+          "package_name": "com.example.lifestyle"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrUcA8WvM3-7Lu9K6mrAe2xd1eR208tWw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
