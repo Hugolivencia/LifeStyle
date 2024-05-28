@@ -24,9 +24,6 @@
         android:theme="@style/Theme.LifeStyle"
         tools:targetApi="31">
         <activity
-            android:name=".Activities.ActivityInfoFavorite"
-            android:exported="false" />
-        <activity
             android:name=".Activities.login.ActivityConf"
             android:exported="false" />
         <activity
