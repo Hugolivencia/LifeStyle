@@ -81,6 +81,7 @@ open class ActivityMain2 : AppCompatActivity() {
                 guardarIngrediente(ingredientes)
             }
         }
+        // Cambios
 
         for (i in 0 until binding.linearlayout3.childCount) {
             val view2 = binding.linearlayout3.getChildAt(i)
